@@ -1,10 +1,12 @@
 <template>
   <div class="main">
   <div>
-    <!-- Votre contenu pour la page d'accueil -->
+    <!-- Contenu du dashboard -->
     <h1>Vue d'ensemble de vos dépenses d'assurances</h1>
   </div>
   <div class="main__card">
+    <!-- Dans chaque cart on appelle le montant renseigné dans les composants enfants -->
+    <!-- l'information est importé depuis le store -->
     <!-- Auto card -->
     <q-card
       class="main__card__item"
@@ -82,7 +84,10 @@ export default {
 
   setup() {
     const store = useStore();
-
+    // On récupère les données du store et on les affiche dans le dashboard
+    // On utilise computed pour que les données soient mises à jour en temps réel
+    // On utilise Number pour que les données soient affichées
+    // en nombre et non en string afin de pouvoir les additionner
     const autoPrice = computed(() => Number(store.getters['auto/price']));
     const habitationPrice = computed(() => Number(store.getters['habitation/price']));
     const santePrice = computed(() => Number(store.getters['sante/price']));

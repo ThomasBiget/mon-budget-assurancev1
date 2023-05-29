@@ -2,6 +2,8 @@
 import { boot } from 'quasar/wrappers';
 import { createStore } from 'vuex';
 
+// creation d'un store pour chaque module
+
 import auto from '../store/auto';
 import habitation from '../store/habitation';
 import sante from '../store/sante';
