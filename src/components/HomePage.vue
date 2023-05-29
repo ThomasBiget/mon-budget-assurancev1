@@ -66,10 +66,10 @@ h1 {
 .home-ban {
   display: flex;
   flex-direction: column;
-  background: url("https://cdn.quasar.dev/img/parallax2.jpg") no-repeat center fixed;
+  background: url(../../public/img/budget.jpg) no-repeat center fixed;
   background-size: cover;
   color: white;
-  text-shadow: black 1px 0 2px;
+  text-shadow: black 1px 0 3px;
 }
 
 .home-title{
@@ -79,6 +79,7 @@ h1 {
 
 .home-text {
   margin-left: 1rem;
+  font-size: 1.2rem;
 }
 
 .home-link {
@@ -99,6 +100,11 @@ h1 {
   max-width: 700px;
   margin: 2rem;
   line-height: 1.5rem;
+  font-size: 1.1rem;
+  text-align: justify;
+  background-color: rgba(246, 246, 247, 0.5);
+  border-radius: 15px;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 500px){
