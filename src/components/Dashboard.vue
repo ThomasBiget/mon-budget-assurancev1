@@ -2,7 +2,7 @@
   <div class="main">
   <div>
     <!-- Contenu du dashboard -->
-    <h1>Vue d'ensemble de vos dépenses d'assurances</h1>
+    <h1>Vue d'ensemble de vos dépenses d'assurances annuelles</h1>
   </div>
   <div class="main__card">
     <!-- Dans chaque cart on appelle le montant renseigné dans les composants enfants -->
@@ -14,7 +14,10 @@
     >
       <q-card-section>
         <div class="text-h6">Budget Auto</div>
-        <div class="text-subtitle2">annuel en €</div>
+      <ul>
+        <li>Bonus/Malus : {{ autoBonus }}</li>
+        <li>Assurance : {{ autoAssurance }}</li>
+      </ul>
       </q-card-section>
 
       <q-card-section class="price">
@@ -28,7 +31,6 @@
     >
       <q-card-section>
         <div class="text-h6">Budget habitation</div>
-        <div class="text-subtitle2">annuel en €</div>
       </q-card-section>
 
       <q-card-section class="price">
@@ -42,7 +44,6 @@
     >
       <q-card-section>
         <div class="text-h6">Budget santé</div>
-        <div class="text-subtitle2">annuel en €</div>
       </q-card-section>
 
       <q-card-section class="price">
@@ -56,7 +57,6 @@
     >
       <q-card-section>
         <div class="text-h6">Budget prévoyance</div>
-        <div class="text-subtitle2">annuel en €</div>
       </q-card-section>
 
       <q-card-section class="price">
@@ -67,7 +67,6 @@
   <q-separator class="separator" color="grey" inset />
   <div class="main__total">
     <div class="text-h6">Budget total assurance</div>
-    <div class="text-subtitle2">annuel</div>
     <div class="final-price">
       {{ autoPrice + habitationPrice + santePrice + prevoyancePrice }} €
     </div>
@@ -84,6 +83,8 @@ export default {
 
   setup() {
     const store = useStore();
+    const autoBonus = computed(() => store.getters['auto/bonus']);
+    const autoAssurance = computed(() => store.getters['auto/assurance']);
     // On récupère les données du store et on les affiche dans le dashboard
     // On utilise computed pour que les données soient mises à jour en temps réel
     // On utilise Number pour que les données soient affichées
@@ -94,6 +95,8 @@ export default {
     const prevoyancePrice = computed(() => Number(store.getters['prevoyance/price']));
 
     return {
+      autoBonus,
+      autoAssurance,
       autoPrice,
       habitationPrice,
       santePrice,

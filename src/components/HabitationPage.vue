@@ -9,7 +9,7 @@
   @reset="onReset"
   class="q-gutter-md"
 >
-
+       <!-- Input dans lequel on renseigne le montant de l'assurance -->
   <q-input
     filled
     type="number"
@@ -40,6 +40,7 @@ export default {
     return {
       prix,
       onSubmit() {
+        // On récupère la valeur de l'input et on la stocke dans le store
         const homeInsurancePrice = prix.value;
         store.dispatch('habitation/setPrice', homeInsurancePrice);
       },

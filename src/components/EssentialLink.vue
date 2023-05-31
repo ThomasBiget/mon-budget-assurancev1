@@ -1,4 +1,5 @@
 <template>
+  <!-- Template des liens qui seront affichés dans la sidebar -->
   <q-item clickable>
     <router-link :to="link" class="my-link">
       <q-item-section
@@ -22,6 +23,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'EssentialLink',
   props: {
+    // Props des données attendues pour les liens
     title: {
       type: String,
       required: true,

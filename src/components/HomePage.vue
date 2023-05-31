@@ -20,7 +20,7 @@
                 <div class="home-description">
                   <p>
                   Bienvenue sur mon-budget-assurance, votre gestionnaire d'assurances
-                  en ligne. À travers notre plateforme innovante et sécurisée, nous avons
+                  en ligne. À travers notre plateforme innovante, nous avons
                   pour mission de vous aider à maîtriser votre budget d'assurances de manière
                   transparente et efficace.
                   </p>
